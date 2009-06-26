@@ -1,0 +1,33 @@
+html, body {
+  font-size: 12.5px; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: helvetica, verdana, arial, sans-serif;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: 1.25em;
+  text-align: left;
+  vertical-align: baseline; }
+
+html {
+  overflow-y: scroll; }
+
+a img, :link img, :visited img {
+  border: 0; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ul {
+  list-style: none; }

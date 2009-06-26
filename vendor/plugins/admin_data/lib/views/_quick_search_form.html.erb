@@ -1,0 +1,15 @@
+<br />
+<%=form_tag('/admin_data/quick_search',:method => 'get', :id => 'search',:style=>'margin:5px;padding:5px;')%>   
+  <input type="hidden" name="klass" value="<%=@klass.to_s%>" />     
+  <div class='search_box'>
+      <div id='quick_search'>
+        <input type="text" id="quick_search_input" name="query" value="<%=params[:query]%>"/>
+        <input type="submit" value="Search" />
+      </div>
+ </div>
+</form>
+<br />
+
+<script type="text/javascript">
+    document.getElementById("quick_search_input").focus()
+</script>
