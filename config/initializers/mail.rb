@@ -1,13 +1,11 @@
+#TODO: Need to sort this out for railsbridge
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => "72.249.191.186",
+  :address => "111.111.111.111",
   :port => 25,
-  :domain => "larkfarm.com",
+  :domain => "railsbridge.org",
   :authentication => :login,
-  :user_name => "mikeg1@larkfarm.com",
-  :password => "23Wombat#"  
+  :user_name => "user",
+  :password => "password"  
 }
 
-# base64 encodings:
-# username => bWlrZWcxQGxhcmtmYXJtLmNvbQ==
-# password => MjNXb21iYXQj
