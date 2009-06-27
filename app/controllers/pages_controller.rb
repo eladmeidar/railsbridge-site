@@ -8,4 +8,16 @@ class PagesController < ApplicationController
     @page_title = "CSS Test"
   end
   
+  def mission
+    @page_title = "The RailsBridge Mission"
+  end
+  
+  def help
+    @page_title = "Get Involved"
+  end
+  
+  def about
+    @page_title = "About RailsBridge"
+  end
+  
 end
