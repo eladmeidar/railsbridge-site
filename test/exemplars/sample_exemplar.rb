@@ -13,6 +13,6 @@ class Company < ActiveRecord::Base
 
   def self.next_login
     @last_login ||= 'joesgarage'
-    @last_login.succ
+    @last_login.succ!
   end
 end
