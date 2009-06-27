@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 3) do
+ActiveRecord::Schema.define(:version => 20090627010900) do
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "short_description"
+    t.string   "link"
+    t.text     "long_description"
+    t.string   "team_lead"
+    t.string   "team_lead_email"
+    t.string   "site_image_file_name"
+    t.string   "site_image_content_type"
+    t.integer  "site_image_size"
+    t.datetime "site_image_updated_ad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

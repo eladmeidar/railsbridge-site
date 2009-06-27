@@ -64,3 +64,40 @@ Migrating to CreateProjects (20090627010900)
   [4;35;1mSQL (8.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090627010900')[0m
   [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mProject Load (1.1ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "projects" ("name", "site_image_size", "team_lead", "updated_at", "short_description", "site_image_updated_ad", "id", "long_description", "site_image_file_name", "link", "team_lead_email", "site_image_content_type", "created_at") VALUES(E'Public Rails Workshops', NULL, E'Sarah Mei', '2009-06-27 01:29:39.023874', E'Introductory workshops designed to spread Rails knowledge', NULL, 1, E'', NULL, E'http://workshops.railsbridge.org', E'sarahmei@gmail.com', NULL, '2009-06-27 01:29:39.023874') RETURNING "id"[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (47.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (0.7ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "projects" ("name", "site_image_size", "team_lead", "updated_at", "short_description", "site_image_updated_ad", "id", "long_description", "site_image_file_name", "link", "team_lead_email", "site_image_content_type", "created_at") VALUES(E'Teaching Kids', NULL, E'Sarah Allen', '2009-06-27 01:29:39.080334', E'Open source Rails classes for the next generation', NULL, 2, E'', NULL, E'http://teachingkids.railsbridge.org', E'sarah@ultrasaurus.com', NULL, '2009-06-27 01:29:39.080334') RETURNING "id"[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "projects" ("name", "site_image_size", "team_lead", "updated_at", "short_description", "site_image_updated_ad", "id", "long_description", "site_image_file_name", "link", "team_lead_email", "site_image_content_type", "created_at") VALUES(E'Rails Mentors', NULL, E'Brian Hogan', '2009-06-27 01:29:39.083377', E'Sharing knowledge from experience', NULL, 3, E'', NULL, E'http://www.railsmentors.org', E'bphogan@gmail.com', NULL, '2009-06-27 01:29:39.083377') RETURNING "id"[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "projects" ("name", "site_image_size", "team_lead", "updated_at", "short_description", "site_image_updated_ad", "id", "long_description", "site_image_file_name", "link", "team_lead_email", "site_image_content_type", "created_at") VALUES(E'Rails Courseware', NULL, E'Dana Jones', '2009-06-27 01:29:39.086530', E'Open source courseware for Rails newcomers', NULL, 4, E'', NULL, E'http://railstutor.org', E'djones@larkfarm.com', NULL, '2009-06-27 01:29:39.086530') RETURNING "id"[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "projects" ("name", "site_image_size", "team_lead", "updated_at", "short_description", "site_image_updated_ad", "id", "long_description", "site_image_file_name", "link", "team_lead_email", "site_image_content_type", "created_at") VALUES(E'Student Code Reviews', NULL, E'Mike Gunderloy', '2009-06-27 01:29:39.089701', E'Feedback for post-secondary students', NULL, 5, E'', NULL, E'', E'mikeg1@larkfarm.com', NULL, '2009-06-27 01:29:39.089701') RETURNING "id"[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "projects" ("name", "site_image_size", "team_lead", "updated_at", "short_description", "site_image_updated_ad", "id", "long_description", "site_image_file_name", "link", "team_lead_email", "site_image_content_type", "created_at") VALUES(E'Ruby Challenge', NULL, E'Marianna Kenesy', '2009-06-27 01:29:39.092585', E'Puzzle-based way to learn Ruby', NULL, 6, E'', NULL, E'http://rubychallenge.com/', E'kenesymarianna@gmail.com', NULL, '2009-06-27 01:29:39.092585') RETURNING "id"[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "projects" ("name", "site_image_size", "team_lead", "updated_at", "short_description", "site_image_updated_ad", "id", "long_description", "site_image_file_name", "link", "team_lead_email", "site_image_content_type", "created_at") VALUES(E'RailsBridge Wiki', NULL, E'Jeff Schoolcraft', '2009-06-27 01:29:39.095086', E'Everything About RailsBridge', NULL, 7, E'', NULL, E'http://wiki.railsbridge.org', E'jeffrey.schoolcraft@gmail.com', NULL, '2009-06-27 01:29:39.095086') RETURNING "id"[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
