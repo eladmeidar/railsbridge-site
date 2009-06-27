@@ -10,6 +10,7 @@ class UserTest < ActiveSupport::TestCase
   
   context "#deliver_password_reset_instructions!" do
     setup do
+      activate_authlogic
       @user = User.generate!
       Notifier.stubs(:deliver_password_reset_instructions)
     end
