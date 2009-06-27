@@ -7,9 +7,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => "pages", :action => "home"
 
-  map.mission, 'mission', :controller => "pages", :action => "mission"
-  map.home, 'home', :controller => "pages", :action => "home"
-  map.about, 'about', :controller => "pages", :action => "about"
+  map.mission 'mission', :controller => "pages", :action => "mission"
+  map.home 'home', :controller => "pages", :action => "home"
+  map.about 'about', :controller => "pages", :action => "about"
   
   map.pages 'pages/:action', :controller => "pages"
 end
