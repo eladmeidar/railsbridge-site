@@ -13,6 +13,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_login_ip
       t.string :current_login_ip
       t.boolean :admin
+      t.string :first_name
+      t.string :last_name
     end
     
     add_index :users, :login

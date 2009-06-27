@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(:version => 20090627010900) do
     t.string   "last_login_ip"
     t.string   "current_login_ip"
     t.boolean  "admin"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "perishable_token",  :default => "", :null => false
     t.string   "email",             :default => "", :null => false
   end
