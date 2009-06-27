@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_filter :logged_in, :except => [ :index, :show ]
+  before_filter :require_user, :except => [ :index, :show ]
   before_filter :find_project, :only => [ :show, :edit, :update, :destroy ]
 
   def index
@@ -43,6 +43,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
+    flash[:notice] = 'Project was deleted.'
     redirect_to(projects_url)
   end
   

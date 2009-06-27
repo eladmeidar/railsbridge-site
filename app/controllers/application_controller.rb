@@ -21,14 +21,14 @@ class ApplicationController < ActionController::Base
   end
   
   def admin_required
-    unless current_user.is_admin?
+    unless current_user.admin?
       flash[:error] = "Sorry, you don't have access to that."
       redirect_to root_url and return false
     end
   end
   
   def admin_logged_in?
-    logged_in? && current_user.is_admin?
+    logged_in? && current_user.admin?
   end
 
 private

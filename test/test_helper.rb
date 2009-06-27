@@ -3,11 +3,12 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 require 'shoulda'
 require 'mocha'
+require 'authlogic/test_case'
 
 # skip after_create callback during testing
 # class Company < ActiveRecord::Base; def setup_default_categories; end; end
 
-class Test::Unit::TestCase
+class ActiveSupport::TestCase
   
 #  self.use_transactional_fixtures = true
 #  self.use_instantiated_fixtures  = false
@@ -19,4 +20,8 @@ class Test::Unit::TestCase
   #fixtures :all
 
   # Add more helper methods to be used by all tests here...
+end
+
+class ActionController::TestCase
+  setup :activate_authlogic
 end
