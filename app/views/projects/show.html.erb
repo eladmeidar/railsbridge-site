@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @project.name %>
+</p>
+
+<p>
+  <b>Short description:</b>
+  <%=h @project.short_description %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%=h @project.link %>
+</p>
+
+<p>
+  <b>Long description:</b>
+  <%=h @project.long_description %>
+</p>
+
+<p>
+  <b>Team lead:</b>
+  <%=h @project.team_lead %>
+</p>
+
+<p>
+  <b>Team lead email:</b>
+  <%=h @project.team_lead_email %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

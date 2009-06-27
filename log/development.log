@@ -34,3 +34,33 @@ Migrating to AddUsersPasswordResetFields (3)
   [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('3')[0m
   [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (1)
+Migrating to CreateSessions (2)
+Migrating to AddUsersPasswordResetFields (3)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2009-06-26 15:29:41) [GET]
+  Parameters: {"action"=>"home", "controller"=>"pages"}
+Rendering template within layouts/application
+Rendering pages/home
+  [4;36;1mUser Load (17.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'5d7e9ffd21947f0f3c7f6164c2db4036773a0a48681924d490f087459b5ccc22f40e4291127ec3fe87739d42adf0f80a2137d1a01359860926db89a4d3012c11') LIMIT 1[0m
+Rendered layouts/_flashes (0.6ms)
+Completed in 110ms (View: 91, DB: 17) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (1)
+Migrating to CreateSessions (2)
+Migrating to AddUsersPasswordResetFields (3)
+Migrating to CreateProjects (20090627010900)
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (195.2ms)[0m   [0;1mCREATE TABLE "projects" ("id" serial primary key, "name" character varying(255), "short_description" character varying(255), "link" character varying(255), "long_description" text, "team_lead" character varying(255), "team_lead_email" character varying(255), "site_image_file_name" character varying(255), "site_image_content_type" character varying(255), "site_image_size" integer, "site_image_updated_ad" timestamp, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (8.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090627010900')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m

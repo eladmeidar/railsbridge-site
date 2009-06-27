@@ -1,0 +1,30 @@
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Short description</th>
+    <th>Link</th>
+    <th>Long description</th>
+    <th>Team lead</th>
+    <th>Team lead email</th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%=h project.name %></td>
+    <td><%=h project.short_description %></td>
+    <td><%=h project.link %></td>
+    <td><%=h project.long_description %></td>
+    <td><%=h project.team_lead %></td>
+    <td><%=h project.team_lead_email %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New project', new_project_path %>
