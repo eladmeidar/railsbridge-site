@@ -15,6 +15,11 @@
       <%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %>
     </p>
   </div>
+  <% team_lead_only do %>
+    <div class="admin_links">
+      <%= link_to 'Edit project', edit_project_path(project) %> | <%= link_to "Delete project", project, :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+  <% end %>
 <% end %>
 
 <% team_lead_only do %>
