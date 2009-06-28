@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   
   def home
     @page_title = 'railsbridge-site'
+    @projects = Project.all.shuffle
   end
   
   def css_test

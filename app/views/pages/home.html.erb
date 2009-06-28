@@ -25,48 +25,33 @@
 </div>
 <div id="rightContainer">
 
-<div class="contentBox">
-	<div class="subTitleHolder">
-		<div class="subTitle"><h2><strong>Featured</strong> Projects</h2></div><div class="subTitleLink"><a href="#">View all Projects &raquo;</a></div>
-	</div>
-	<ul>
-		<li>
-			<img src="images/imgPlaceHolder.png" width="140" height="81" alt="Image Place Holder" />
-			<h3>Project Title</h3>
-			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
-		</li>
-		<li>
-			<img src="images/imgPlaceHolder.png" width="140" height="81" alt="Image Place Holder" />
-			<h3>Project Title</h3>
-			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
-		</li>
-		<li class="last">
-			<img src="images/imgPlaceHolder.png" width="140" height="81" alt="Image Place Holder" />
-			<h3>Project Title</h3>
-			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
-		</li>
-	</ul>
-</div>
+  <div class="contentBox">
+  	<div class="subTitleHolder">
+  		<div class="subTitle"><h2><strong>Featured</strong> Projects</h2></div><div class="subTitleLink"><%= link_to "View all Projects &raquo;", projects_path %></div>
+  	</div>
+  	<ul>
+  	  <% @projects[0..2].each do |project| %>
+    		<li>
+    		  <%= link_to image_tag(project.site_image.url(:thumb), :size => "140x81", :alt => project.name), project.link %>
+    			<h3><%= project.name %></h3>
+    			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %></p>
+    		</li>
+  		<% end %>
+  	</ul>
+  </div>
 
-<div class="contentBox">
-	<div class="subTitleHolder">
-		<div class="subTitle"><h2>A Network of <strong>Rails-Focused Efforts</strong> for the <strong>greater good</strong></h2></div>
-	</div>
-	<ul>
-		<li>
-			<h3>Project Title</h3>
-			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
-		</li>
-		<li>
-			<h3>Project Title</h3>
-			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
-		</li>
-		<li class="last">
-			<h3>Project Title</h3>
-			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
-		</li>
-	</ul>
-</div>
-
-</div>
+  <div class="contentBox">
+  	<div class="subTitleHolder">
+  		<div class="subTitle"><h2>A Network of <strong>Rails-Focused Efforts</strong> for the <strong>greater good</strong></h2></div>
+  	</div>
+  	<ul>
+  	  <% @projects[3..5].each do |project| %>
+    		<li>
+    		  <%= link_to image_tag(project.site_image.url(:thumb), :size => "140x81", :alt => project.name), project.link %>
+    			<h3><%= project.name %></h3>
+    			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %></p>
+    		</li>
+  		<% end %>
+  	</ul>
+  </div>
 </div>
