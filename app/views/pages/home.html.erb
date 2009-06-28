@@ -34,7 +34,7 @@
     		<li>
     		  <%= link_to image_tag(project.site_image.url(:thumb), :size => "140x81", :alt => project.name), project.link %>
     			<h3><%= project.name %></h3>
-    			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %></p>
+    			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %></p>
     		</li>
   		<% end %>
   	</ul>
@@ -49,7 +49,7 @@
     		<li>
     		  <%= link_to image_tag(project.site_image.url(:thumb), :size => "140x81", :alt => project.name), project.link %>
     			<h3><%= project.name %></h3>
-    			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %></p>
+    			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %></p>
     		</li>
   		<% end %>
   	</ul>
