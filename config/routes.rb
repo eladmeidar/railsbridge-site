@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.help 'help', :controller => "pages", :action => "help"
   map.login 'login', :controller => "user_sessions", :action => "new"
   map.login 'logout', :controller => "user_sessions", :action => "destroy"
+  map.register 'register', :controller => "users", :action => "new"
   
   map.pages 'pages/:action', :controller => "pages"
 end
