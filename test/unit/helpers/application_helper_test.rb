@@ -26,6 +26,25 @@ class ApplicationHelperTest < ActionView::TestCase
     end
   end
   
+  context "#team_lead_only" do
+    should "call the supplied block if the current user is logged in and team_lead" do
+      self.stubs(:logged_in?).returns(true)
+      self.stubs(:team_lead_logged_in?).returns(true)
+      assert_equal "result", team_lead_only {"result"}
+    end
+
+    should "not call the supplied block if the current user is anonymous" do
+      self.stubs(:logged_in?).returns(false)
+      assert_nil team_lead_only {"result"}
+    end
+
+    should "not call the supplied block if the current user is logged in but not team_lead" do
+      self.stubs(:logged_in?).returns(true)
+      self.stubs(:team_lead_logged_in?).returns(false)
+      assert_nil team_lead_only {"result"}
+    end
+  end
+  
   context "#admin_only" do
     should "call the supplied block if the current user is logged in and an admin" do
       self.stubs(:logged_in?).returns(true)

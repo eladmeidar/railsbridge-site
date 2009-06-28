@@ -19,6 +19,12 @@ module ApplicationHelper
     end
   end
   
+  def team_lead_only(&block)
+    if logged_in? && team_lead_logged_in?
+      block.call
+    end
+  end
+  
   # Block method that creates an area of the view that
   # only renders if the request is coming from an
   # administrative user.

@@ -20,6 +20,26 @@ class ApplicationControllerTest < ActionController::TestCase
     end
   end
   
+  context "#team_lead_logged_in?" do
+    should "return true if there is a user session for an approved user" do
+      @the_user = User.generate!
+      @the_user.team_lead = true
+      UserSession.create(@the_user)
+      assert controller.team_lead_logged_in?
+    end
+    
+    should "return false if there is a user session for a non-approved user" do
+      @the_user = User.generate!
+      @the_user.team_lead = false
+      UserSession.create(@the_user)
+      assert !controller.team_lead_logged_in?
+    end
+    
+    should "return false if there is no session" do
+      assert !controller.team_lead_logged_in?
+    end
+  end
+  
   context "#admin_logged_in?" do
     should "return true if there is a user session for an admin" do
       @the_user = User.generate!

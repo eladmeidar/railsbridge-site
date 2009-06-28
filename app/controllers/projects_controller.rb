@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_filter :require_approved_user, :except => [ :index, :show ]
+  before_filter :require_team_lead_user, :except => [ :index, :show ]
   before_filter :find_project, :only => [ :show, :edit, :update, :destroy ]
 
   def index

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090627010900) do
+ActiveRecord::Schema.define(:version => 20090627222433) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20090627010900) do
     t.string   "last_name"
     t.string   "perishable_token",  :default => "", :null => false
     t.string   "email",             :default => "", :null => false
+    t.boolean  "team_lead"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

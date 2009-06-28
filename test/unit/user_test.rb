@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   
   should_allow_mass_assignment_of :login, :password, :password_confirmation, :first_name, :last_name, :email
   should_not_allow_mass_assignment_of :crypted_password, :password_salt, :persistence_token, :login_count, :last_request_at, :last_login_at,
-    :current_login_at, :last_login_ip, :current_login_ip, :admin, :created_at, :updated_at, :id, :approved
+    :current_login_at, :last_login_ip, :current_login_ip, :admin, :created_at, :updated_at, :id, :team_lead
   
   context "#deliver_password_reset_instructions!" do
     setup do

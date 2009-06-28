@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProjectsControllerTest < ActionController::TestCase
   
-  should_have_before_filter :require_approved_user, :except => [ :index, :show ]
+  should_have_before_filter :require_team_lead_user, :except => [ :index, :show ]
   should_have_before_filter :find_project, :only => [ :show, :edit, :update, :destroy ]
 
   context "on GET to :index" do
@@ -34,7 +34,7 @@ class ProjectsControllerTest < ActionController::TestCase
 
   context "on GET to :new" do
     setup do
-      controller.stubs(:require_approved_user).returns(true)
+      controller.stubs(:require_team_lead_user).returns(true)
       @the_project = Project.generate!
       Project.stubs(:new).returns(@the_project)
       get :new
@@ -49,7 +49,7 @@ class ProjectsControllerTest < ActionController::TestCase
 
   context "on POST to :create" do
     setup do
-      controller.stubs(:require_approved_user).returns(true)
+      controller.stubs(:require_team_lead_user).returns(true)
       @the_project = Project.generate!
       Project.stubs(:new).returns(@the_project)
     end
@@ -81,7 +81,7 @@ class ProjectsControllerTest < ActionController::TestCase
   
   context "on GET to :edit" do
     setup do
-      controller.stubs(:require_approved_user).returns(true)
+      controller.stubs(:require_team_lead_user).returns(true)
       @the_project = Project.generate!
       Project.stubs(:find).with(@the_project.id.to_s).returns(@the_project)
       get :edit, :id => @the_project.id
@@ -96,7 +96,7 @@ class ProjectsControllerTest < ActionController::TestCase
 
   context "on PUT to :update" do
     setup do
-      controller.stubs(:require_approved_user).returns(true)
+      controller.stubs(:require_team_lead_user).returns(true)
       @the_project = Project.generate!
       Project.stubs(:find).with(@the_project.id.to_s).returns(@the_project)
     end
@@ -128,7 +128,7 @@ class ProjectsControllerTest < ActionController::TestCase
   
   context "on DELETE to :destroy" do
     setup do
-      controller.stubs(:require_approved_user).returns(true)
+      controller.stubs(:require_team_lead_user).returns(true)
       @the_project = Project.generate!
       Project.stubs(:find).with(@the_project.id.to_s).returns(@the_project)
       delete :destroy, :id => @the_project.id
