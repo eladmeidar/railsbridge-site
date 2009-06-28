@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 private
 
   def find_user
-    if @current_user.admin?
+    if @current_user.admin? && params[:id]
       @user = User.find(params[:id])
     else
       @user = @current_user
