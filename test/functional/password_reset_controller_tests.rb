@@ -11,6 +11,7 @@ class PasswordResetsControllerTest < ActionController::TestCase
       get :new
     end
     
+    should_assign_to(:page_title) { "Forgot Password?" }
     should_respond_with :success
     should_render_template :new
     should_not_set_the_flash
@@ -54,6 +55,7 @@ class PasswordResetsControllerTest < ActionController::TestCase
       get :edit, :id => "the token"
     end
     
+    should_assign_to(:page_title) { "Select a New Password" }
     should_respond_with :success
     should_render_template :edit
     should_not_set_the_flash

@@ -3,7 +3,7 @@ class PasswordResetsController < ApplicationController
   before_filter :require_no_user
   
   def new
-    render
+    @page_title = "Forgot Password?"
   end
   
   def create
@@ -20,7 +20,7 @@ class PasswordResetsController < ApplicationController
   end
   
   def edit
-    render
+    @page_title = "Select a New Password"
   end
 
   def update

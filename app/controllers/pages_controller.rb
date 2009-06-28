@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
   def home
-    @page_title = 'railsbridge-site'
+    @page_title = 'RailsBridge'
     @projects = Project.all.shuffle
   end
   

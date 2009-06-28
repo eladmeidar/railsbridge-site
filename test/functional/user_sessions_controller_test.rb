@@ -13,6 +13,7 @@ class UserSessionsControllerTest < ActionController::TestCase
     end
     
     should_assign_to(:user_session) { @the_user_session }
+    should_assign_to(:page_title) { "Login" }
     should_respond_with :success
     should_render_template :new
     should_not_set_the_flash
