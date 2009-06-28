@@ -1,37 +1,20 @@
-<p>
+<div class="project">
   <%= image_tag @project.site_image.url(:medium) %>
-</p>
+  <h1><%=h @project.name %></h1>
+  <p>
+    <%=h @project.long_description %>
+  </p>
+  <p>
+    Team Lead: <%= mail_to @project.team_lead_email, @project.team_lead, :encode => "javascript" %>
+  </p>
+  <p>
+    <%= link_to "Visit the Site", @project.link %> | <%= link_to "More details &raquo;", @project %>
+  </p>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%=h @project.name %>
-</p>
-
-<p>
-  <b>Short description:</b>
-  <%=h @project.short_description %>
-</p>
-
-<p>
-  <b>Link:</b>
-  <%=h @project.link %>
-</p>
-
-<p>
-  <b>Long description:</b>
-  <%=h @project.long_description %>
-</p>
-
-<p>
-  <b>Team lead:</b>
-  <%=h @project.team_lead %>
-</p>
-
-<p>
-  <b>Team lead email:</b>
-  <%=h @project.team_lead_email %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<% team_lead_only do %>
+  <div class="admin_links">
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Back', projects_path %>
+  </div>
+<% end %>
