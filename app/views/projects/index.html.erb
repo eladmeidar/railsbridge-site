@@ -1,30 +1,24 @@
-<h1>Listing projects</h1>
+<h1>RailsBridge projects</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Short description</th>
-    <th>Link</th>
-    <th>Long description</th>
-    <th>Team lead</th>
-    <th>Team lead email</th>
-  </tr>
 
 <% @projects.each do |project| %>
-  <tr>
-    <td><%=h project.name %></td>
-    <td><%=h project.short_description %></td>
-    <td><%=h project.link %></td>
-    <td><%=h project.long_description %></td>
-    <td><%=h project.team_lead %></td>
-    <td><%=h project.team_lead_email %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="project">
+    <h1><%= h project.name %></h1>
+    <%= image_tag project.site_image.url(:medium) %>
+    <p>
+      <%=h project.short_description %>
+    </p>
+    <p>
+      Team Lead: <%= mail_to project.team_lead_email, project.team_lead, :encode => "javascript" %>
+    </p>
+    <p>
+      <%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %>
+    </p>
+  </div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New project', new_project_path %>
+<% team_lead_only do %>
+  <div class="admin_links">
+    <%= link_to 'New project', new_project_path %>
+  </div>
+<% end %>
