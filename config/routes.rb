@@ -11,6 +11,8 @@ ActionController::Routing::Routes.draw do |map|
   map.home 'home', :controller => "pages", :action => "home"
   map.about 'about', :controller => "pages", :action => "about"
   map.help 'help', :controller => "pages", :action => "help"
+  map.login 'login', :controller => "user_sessions", :action => "new"
+  map.login 'logout', :controller => "user_sessions", :action => "destroy"
   
   map.pages 'pages/:action', :controller => "pages"
 end
