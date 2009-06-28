@@ -1,23 +1,72 @@
-<div id="top_menu">
-  <% anonymous_only do %>
-    <%= link_to "Register", new_account_path %>
-    <%= link_to "Login", new_user_session_path %>
-  <% end %>
-  <% authenticated_only do %>
-    <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
-  <% end %>
+<div id="leftContainer">
+	<h1 class="redMarking">Rails<strong>Bridge</strong> guidelines are</h1>
+	<p><span class="highlight">First, do no harm.</span> Then, help where you can.</p>
+	<p><span class="highlight">Bridge the gap</span> from aspiring developer to contributing community member through mentoring, teaching &amp; writing.</p>
+	<p><span class="highlight">Reach out</span> to individuals and groups who are underrepresented in the community.</p>
+	<p><span class="highlight">Collaborate</span> with other groups with similar goals.</p>
+	<hr />
+	<h2 class="redMarking"><strong>News</strong></h2>
+	
+	<h3><a href="#" title="Some news"><span class="date">06.26.09</span> Lorem ipsum dolor sit amet</a></h3>
+	<p>Proin vel ante tellus, non fringilla sapien. Pellentesque eu dignissim nisi. Praesent id vehicula tellus. Curabitur odio nulla, vehicula at eleifend vel, sodales eget tortor.</p>
+
+	<h3><a href="#" title="Some news"><span class="date">06.09.09</span> Etiam nec dolor sit amet</a></h3>
+	<p>Donec mauris ligula, tincidunt nec commodo id, feugiat ut libero. Vestibulum porta malesuada pellentesque. Nam dolor augue, feugiat blandit imperdiet non, posuere vitae erat. Cras vulputate gravida dolor vitae mattis.</p>
+	
+	<p class="allNews"><a href="#" title="View all news">View all news &raquo;</a></p>
+	<hr />
+	<form id="subscribe" action="/subscribe" method="get" >
+		<p>
+			<label for="subscribe">Subscribe to the RailsBridge Group at Google</label>
+			<input class="subscribe" id="email" type="text" name="email" title="Type your e-mail address." />
+			<input type="button" class="subscribeButton" value="Subscribe" />
+		</p>
+	</form>
+</div>
+<div id="rightContainer">
+
+<div class="contentBox">
+	<div class="subTitleHolder">
+		<div class="subTitle"><h2><strong>Featured</strong> Projects</h2></div><div class="subTitleLink"><a href="#">View all Projects &raquo;</a></div>
+	</div>
+	<ul>
+		<li>
+			<img src="images/imgPlaceHolder.png" width="140" height="81" alt="Image Place Holder" />
+			<h3>Project Title</h3>
+			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
+		</li>
+		<li>
+			<img src="images/imgPlaceHolder.png" width="140" height="81" alt="Image Place Holder" />
+			<h3>Project Title</h3>
+			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
+		</li>
+		<li class="last">
+			<img src="images/imgPlaceHolder.png" width="140" height="81" alt="Image Place Holder" />
+			<h3>Project Title</h3>
+			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
+		</li>
+	</ul>
 </div>
 
-<div id="main">
-  <h1>Welcome to railsbridge-site</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="contentBox">
+	<div class="subTitleHolder">
+		<div class="subTitle"><h2>A Network of <strong>Rails-Focused Efforts</strong> for the <strong>greater good</strong></h2></div>
+	</div>
+	<ul>
+		<li>
+			<h3>Project Title</h3>
+			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
+		</li>
+		<li>
+			<h3>Project Title</h3>
+			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
+		</li>
+		<li class="last">
+			<h3>Project Title</h3>
+			<p>Brief description here Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Visit the Site</a></p>
+		</li>
+	</ul>
 </div>
 
-<div id="left_menu">
-  <% anonymous_only do %>
-    <%= link_to "Register", new_account_path %>
-    <%= link_to "Login", new_user_session_path %>
-  <% end %>
-  <% authenticated_only do %>
-  <% end %>
+</div>
 </div>
