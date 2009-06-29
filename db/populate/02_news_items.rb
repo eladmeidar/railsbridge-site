@@ -1,5 +1,5 @@
 lede = <<-END
-"Rails Builders"":http://builders.railsbridge.org has several pro bono projects underway for non-profit organizations. 
+"Rails Builders":http://builders.railsbridge.org has several pro bono projects underway for non-profit organizations. 
 We're always in need of more volunteers, so if you'd like to do some good while enhancing your portfolio, head over to the Builders
 web site and let us know how you'd like to be involved.  
 END

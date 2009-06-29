@@ -7,13 +7,14 @@
 	<hr />
 	<h2 class="redMarking"><strong>News</strong></h2>
 	
-	<h3><a href="#" title="Some news"><span class="date">06.26.09</span> Lorem ipsum dolor sit amet</a></h3>
-	<p>Proin vel ante tellus, non fringilla sapien. Pellentesque eu dignissim nisi. Praesent id vehicula tellus. Curabitur odio nulla, vehicula at eleifend vel, sodales eget tortor.</p>
-
-	<h3><a href="#" title="Some news"><span class="date">06.09.09</span> Etiam nec dolor sit amet</a></h3>
-	<p>Donec mauris ligula, tincidunt nec commodo id, feugiat ut libero. Vestibulum porta malesuada pellentesque. Nam dolor augue, feugiat blandit imperdiet non, posuere vitae erat. Cras vulputate gravida dolor vitae mattis.</p>
+	<% @news_items.each do |news_item| %>
+  	<h3><%= link_to "<span class='date'>#{news_item.created_at.strftime('%m.%d.%y')}</span>" + news_item.headline, news_item %></h3>
+  	<p>
+      <%= textilize_without_paragraph news_item.lede %> <%= link_to("more &raquo;", news_item) if !news_item.body.blank? %>
+  	</p>
+  <% end %>
 	
-	<p class="allNews"><a href="#" title="View all news">View all news &raquo;</a></p>
+	<p class="allNews"><%= link_to "View all news &raquo;", news_items_path %></p>
 	<hr />
 	<form id="subscribe" action="/subscribe" method="get" >
 		<p>

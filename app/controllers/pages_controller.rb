@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def home
     @page_title = 'RailsBridge'
     @projects = Project.all.shuffle
+    @news_items = NewsItem.all(:order => "created_at DESC", :limit => 2)
   end
   
   def css_test

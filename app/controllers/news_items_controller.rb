@@ -4,7 +4,7 @@ class NewsItemsController < ApplicationController
   before_filter :find_news_item, :only => [ :show, :edit, :update, :destroy ]
 
   def index
-    @news_items = NewsItem.all(:order => "name")
+    @news_items = NewsItem.all(:order => "created_at DESC")
     @page_title = "RailsBridge News Items"
   end
 
