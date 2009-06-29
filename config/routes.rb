@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :news_items
+
   map.resources :projects
   map.resource :account, :controller => "users"
   map.resources :password_resets

@@ -21,6 +21,9 @@ Project.create_or_update(:id => 6, :name => "Ruby Challenge", :short_description
 Project.create_or_update(:id => 7, :name => "RailsBridge Wiki", :short_description => "Everything About RailsBridge", 
   :link => "http://wiki.railsbridge.org", :long_description => "", :team_lead => "Jeff Schoolcraft", :team_lead_email => "jeffrey.schoolcraft@gmail.com",
   :site_image_file_name => 'wiki-1.png', :site_image_content_type => "image/png")
+Project.create_or_update(:id => 8, :name => "RailsBridge Site", :short_description => "The main RailsBridge web site", 
+  :link => "http://railsbridge.org", :long_description => "", :team_lead => "Elad Meidar", :team_lead_email => "eize.sus@gmail.com",
+  :site_image_file_name => 'site.png', :site_image_content_type => "image/png")
 
 
 # Copy starting images
