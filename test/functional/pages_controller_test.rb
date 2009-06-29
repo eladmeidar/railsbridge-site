@@ -22,10 +22,13 @@ class PagesControllerTest < ActionController::TestCase
     setup do
       @the_project = Project.generate!
       Project.stubs(:all).returns([@the_project] * 6)
+      @the_news_item = NewsItem.generate!
+      NewsItem.stubs(:all).returns([@the_news_item])
       get :home
     end
     
     should_assign_to(:projects) { [@the_project] * 6 }
+    should_assign_to(:news_items) { [@the_news_item] }
     should_assign_to(:page_title) { "RailsBridge" }
     should_respond_with :success
     should_not_set_the_flash
