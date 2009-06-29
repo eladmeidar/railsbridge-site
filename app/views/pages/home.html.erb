@@ -30,8 +30,8 @@
   		<div class="subTitle"><h2><strong>Featured</strong> Projects</h2></div><div class="subTitleLink"><%= link_to "View all Projects &raquo;", projects_path %></div>
   	</div>
   	<ul>
-  	  <% @projects[0..2].each do |project| %>
-    		<li>
+  	  <% @projects[0..2].each_with_index do |project, i| %>
+    		<li class="<%= 'last' if i==2 %>">
     		  <%= link_to image_tag(project.site_image.url(:thumb), :size => "140x81", :alt => project.name), project.link %>
     			<h3><%= project.name %></h3>
     			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %></p>
@@ -45,8 +45,8 @@
   		<div class="subTitle"><h2>A Network of <strong>Rails-Focused Efforts</strong> for the <strong>greater good</strong></h2></div>
   	</div>
   	<ul>
-  	  <% @projects[3..5].each do |project| %>
-    		<li>
+  	  <% @projects[3..5].each_with_index do |project, i| %>
+    		<li class="<%= 'last' if i==2 %>">
     		  <%= link_to image_tag(project.site_image.url(:thumb), :size => "140x81", :alt => project.name), project.link %>
     			<h3><%= project.name %></h3>
     			<p><%= project.short_description %><br /><%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %></p>
