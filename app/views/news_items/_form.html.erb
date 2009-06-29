@@ -1,0 +1,23 @@
+<% form_for(@news_item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline %>
+  </p>
+  <p>
+    <%= f.label :lede %> (Textile markup OK)<br />
+    <%= f.text_area :lede, :size => "100x10" %>
+  </p>
+  <p>
+    <%= f.label :body %> (Textile markup OK)<br />
+    <%= f.text_area :body, :size => "100x20" %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+  <p>
+    The lede is displayed on the site home page and the news item index page. The body of the news item is only displayed
+    on the individual news item page.
+  </p>
+<% end %>
