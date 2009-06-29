@@ -1,2 +1,2 @@
-set :host, "111.111.111.111"
+set :host, "72.249.191.152"
 set :branch, "master"
