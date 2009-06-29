@@ -11,8 +11,10 @@
   <body>
 	<div class="container">
 		<%= render :partial => 'layouts/header' -%>
+		<div id="contentWrapper">
     	<%= render :partial => 'layouts/flashes' -%>
 	    <%= yield %>
+	  </div>
 	</div>
 	<%= render :partial => 'layouts/footer' -%>
   </body>
