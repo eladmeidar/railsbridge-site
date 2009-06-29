@@ -1,18 +1,21 @@
-<h1>
-  <%=h @news_item.headline %>
-</h1>
+<div id="fullWidthContainer">
 
-<p>
-  <%= textilize_without_paragraph @news_item.lede %>
-</p>
+  <h1>
+    <%=h @news_item.headline %>
+  </h1>
 
-<p>
-  <%= textilize_without_paragraph @news_item.body %>
-</p>
+  <p>
+    <%= textilize_without_paragraph @news_item.lede %>
+  </p>
 
-<% team_lead_only do %>
-  <div class="admin_links">
-    <%= link_to 'Edit', edit_news_item_path(@news_item) %> |
-    <%= link_to 'Back', news_items_path %>
-  </div>
-<% end %>
+  <p>
+    <%= textilize_without_paragraph @news_item.body %>
+  </p>
+
+  <% team_lead_only do %>
+    <div class="admin_links">
+      <%= link_to 'Edit', edit_news_item_path(@news_item) %> |
+      <%= link_to 'Back', news_items_path %>
+    </div>
+  <% end %>
+</div>

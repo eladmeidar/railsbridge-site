@@ -1,25 +1,28 @@
-<h1>RailsBridge News</h1>
+<div id="fullWidthContainer">
 
-<% @news_items.each do |news_item| %>
-  <h2>
-    <%=h news_item.headline %>
-  </h2>
+  <h1>RailsBridge News</h1>
 
-  <p>
-    <%= textilize_without_paragraph news_item.lede %> <%= link_to("more &raquo;", news_item) if !news_item.body.blank? %>
-  </p>
+  <% @news_items.each do |news_item| %>
+    <h2>
+      <%=h news_item.headline %>
+    </h2>
+
+    <p>
+      <%= textilize_without_paragraph news_item.lede %> <%= link_to("more &raquo;", news_item) if !news_item.body.blank? %>
+    </p>
   
+    <% team_lead_only do %>
+      <div class="admin_links">
+        <%= link_to 'Edit News Item', edit_news_item_path(news_item) %> | <%= link_to "Delete News Item", news_item, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <br />
+
   <% team_lead_only do %>
     <div class="admin_links">
-      <%= link_to 'Edit News Item', edit_news_item_path(news_item) %> | <%= link_to "Delete News Item", news_item, :confirm => 'Are you sure?', :method => :delete %>
+      <%= link_to 'New News Item', new_news_item_path %>
     </div>
   <% end %>
-<% end %>
-
-<br />
-
-<% team_lead_only do %>
-  <div class="admin_links">
-    <%= link_to 'New News Item', new_news_item_path %>
-  </div>
-<% end %>
+</div>

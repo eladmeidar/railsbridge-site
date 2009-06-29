@@ -1,29 +1,31 @@
-<h1>RailsBridge projects</h1>
+<div id="fullWidthContainer">
+  <h1>RailsBridge projects</h1>
 
+  <% @projects.each do |project| %>
+    <div class="project">
+      <h2><%= h project.name %></h2>
+      <%= image_tag project.site_image.url(:medium) %>
+      <p>
+        <%=h project.short_description %>
+      </p>
+      
+      <p>
+        Team Lead: <%= mail_to project.team_lead_email, project.team_lead, :encode => "javascript" %>
+      </p>
+      <p>
+        <%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %>
+      </p>
+    </div>
+    <% team_lead_only do %>
+      <div class="admin_links">
+        <%= link_to 'Edit project', edit_project_path(project) %> | <%= link_to "Delete project", project, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    <% end %>
+  <% end %>
 
-<% @projects.each do |project| %>
-  <div class="project">
-    <h1><%= h project.name %></h1>
-    <%= image_tag project.site_image.url(:medium) %>
-    <p>
-      <%=h project.short_description %>
-    </p>
-    <p>
-      Team Lead: <%= mail_to project.team_lead_email, project.team_lead, :encode => "javascript" %>
-    </p>
-    <p>
-      <%= link_to "Visit the Site", project.link %> | <%= link_to "More details &raquo;", project %>
-    </p>
-  </div>
   <% team_lead_only do %>
     <div class="admin_links">
-      <%= link_to 'Edit project', edit_project_path(project) %> | <%= link_to "Delete project", project, :confirm => 'Are you sure?', :method => :delete %>
+      <%= link_to 'New project', new_project_path %>
     </div>
   <% end %>
-<% end %>
-
-<% team_lead_only do %>
-  <div class="admin_links">
-    <%= link_to 'New project', new_project_path %>
-  </div>
-<% end %>
+</div>

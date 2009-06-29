@@ -1,20 +1,22 @@
-<div class="project">
-  <%= image_tag @project.site_image.url(:medium) %>
-  <h1><%=h @project.name %></h1>
-  <p>
-    <%=h @project.long_description %>
-  </p>
-  <p>
-    Team Lead: <%= mail_to @project.team_lead_email, @project.team_lead, :encode => "javascript" %>
-  </p>
-  <p>
-    <%= link_to "Visit the Site", @project.link %> | <%= link_to "More details &raquo;", @project %>
-  </p>
-</div>
-
-<% team_lead_only do %>
-  <div class="admin_links">
-    <%= link_to 'Edit', edit_project_path(@project) %> |
-    <%= link_to 'Back', projects_path %>
+<div id="fullWidthContainer">
+  <div class="project">
+    <%= image_tag @project.site_image.url(:medium) %>
+    <h1><%=h @project.name %></h1>
+    <p>
+      <%= textilize @project.long_description %>
+    </p>
+    <p>
+      Team Lead: <%= mail_to @project.team_lead_email, @project.team_lead, :encode => "javascript" %>
+    </p>
+    <p>
+      <%= link_to "Visit the Site", @project.link %> | <%= link_to "More details &raquo;", @project %>
+    </p>
   </div>
-<% end %>
+
+  <% team_lead_only do %>
+    <div class="admin_links">
+      <%= link_to 'Edit', edit_project_path(@project) %> |
+      <%= link_to 'Back', projects_path %>
+    </div>
+  <% end %>
+</div>
