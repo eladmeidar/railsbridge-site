@@ -16,11 +16,11 @@
 	
 	<p class="allNews"><%= link_to "View all news &raquo;", news_items_path %></p>
 	<hr />
-	<form id="subscribe" action="/subscribe" method="get" >
+	<form id="subscribe" action='http://groups.google.com/group/railsbridge/boxsubscribe' >
 		<p>
 			<label for="subscribe">Subscribe to the RailsBridge Group at Google</label>
 			<input class="subscribe" id="email" type="text" name="email" title="Type your e-mail address." />
-			<input type="button" class="subscribeButton" value="Subscribe" />
+			<input type="submit" class="subscribeButton" value="Subscribe" />
 		</p>
 	</form>
 </div>
