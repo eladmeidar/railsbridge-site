@@ -1,4 +1,4 @@
-set :application, "railsbridge-site"
+set :application, "railsbridge-site2"
 set :repository,  "git@github.com:eladmeidar/railsbridge-site.git"
 set :user, "rbadmin"
 set :deploy_via, :fast_remote_cache
