@@ -11,7 +11,7 @@ set :keep_releases, 6
 after "deploy:update", "deploy:cleanup"
 
 # directories to preserve between deployments
-# set :asset_directories, ['public/system/logos', 'public/system/uploads']
+set :asset_directories, ['public/system/site_images']
     
 # Gem dependencies - not needed with config.gem?
 # depend :remote, :gem, "authlogic",            "=2.0.14"
