@@ -1,6 +1,7 @@
 set :application, "railsbridge-site2"
 set :repository,  "git@github.com:eladmeidar/railsbridge-site.git"
 set :user, "rbadmin"
+set :use_sudo, true
 set :deploy_via, :fast_remote_cache
 set :scm, :git
 
