@@ -15,6 +15,8 @@ after "deploy:update", "deploy:link_config"
 # directories to preserve between deployments
 set :asset_directories, ['public/system/site_images']
     
+set :compress_assets, false
+
 # Gem dependencies - not needed with config.gem?
 # depend :remote, :gem, "authlogic",            "=2.0.14"
 # depend :remote, :gem, "mislav-will_paginate", "=2.2.3"
