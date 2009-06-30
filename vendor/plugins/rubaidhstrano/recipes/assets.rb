@@ -56,7 +56,7 @@ on :load do
   end
 
   if fetch(:compress_assets, false)
-    depend :remote, :command, "java"
+    depend :remote, :command, "/usr/java/jdk/bin/java"
     before 'deploy:finalize_update', 'assets:compress'
   end
 end

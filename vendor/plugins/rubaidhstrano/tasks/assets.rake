@@ -29,7 +29,7 @@ namespace :assets do
     end
 
     def yui_compressor(*args)
-      sh "java -jar #{File.join(File.dirname(__FILE__), '..', 'support', 'yuicompressor-2.4.2.jar')} #{args.join(" ")}"
+      sh "/usr/java/jdk/bin/java -jar #{File.join(File.dirname(__FILE__), '..', 'support', 'yuicompressor-2.4.2.jar')} #{args.join(" ")}"
     end
 
     task :javascripts => FileList["public/javascripts/**/*.js"] do |task|
