@@ -9,3 +9,4 @@ db/development.sqlite3
 public/system/*
 .idea/*
 tmp/metric_fu/*
+tmp/restart.txt
