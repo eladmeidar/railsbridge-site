@@ -126,6 +126,54 @@ hr {
   border: none; 
 }
 
+/* @group Menu Toolbar */
+/*HTML + CSS that can be used across all sites as top bar */
+
+#menuToolbar {
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	position: fixed;
+}
+
+#menuToolbarContainer {
+	height: 40px;
+	background: #800219;
+}
+
+#menuToolbarShadow {
+	-moz-box-shadow: 2px 2px 4px #666666;
+	-webkit-box-shadow: 2px 2px 4px #666666;
+	height: 3px;
+	position: absolute;
+	width: 100%;
+	top: 37px;
+	z-index: 9999;
+}
+
+#menuToolbarContent {
+	width: 960px;
+	margin: 0 auto;
+	height: 20px;
+	padding: 10px 0;
+	color: #999;
+}
+
+#menuToolbarContent strong {
+	color: #FFF;
+}
+
+#menuToolbarContent a {
+	color: #FFFF99;
+	margin: 0 5px;
+	font-weight: bold;
+}
+
+/* @end */
+
+
+
 /* Containers
 ---------------------------------------------------------------- */
 .container {
